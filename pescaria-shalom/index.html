@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LANÇAI AS REDES SHALOM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+        src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp,container-queries"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet" />
+    <link href="./css/global.css" rel="stylesheet" />
+    <style>
+        @media (max-width: 640px) {
+            .form-container {
+                height: auto;
+            }
+        }
+    </style>
+    <script>
+        function openNewTab(event) {
+            event.preventDefault(); // Impede o envio do formulário padrão
+            window.open('https://www.exemplo.com', '_blank'); // Substitua pelo URL desejado
+        }
+
+        function validateForm(event) {
+            event.preventDefault(); // Impede o envio do formulário padrão
+            let fullName = document.getElementById('username-success').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let phone = document.getElementById('phone').value.trim();
+
+            // Validação do nome completo (não aceita números nem caracteres especiais)
+            if (!/^[a-zA-Z ]+$/.test(fullName)) {
+                alert('Por favor, insira um nome válido sem números ou caracteres especiais.');
+                return false;
+            }
+
+            // Validação do email (deve conter '@')
+            if (!email.includes('@')) {
+                alert('Por favor, insira um endereço de email válido.');
+                return false;
+            }
+
+            // Validação do telefone (DDD obrigatório e formato numérico)
+            if (!/^\d{2}\d{8,9}$/.test(phone)) {
+                alert('Por favor, insira um número de telefone válido com DDD (ex: 11987654321).');
+                return false;
+            }
+
+            // Redireciona para o site após validação bem-sucedida
+            window.location.href = 'https://www.PescariaShalom.com';
+
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <video id="background-video" autoplay loop muted poster="https://assets.codepen.io/6093409/river.jpg">
+        <source src="./imgs/bg-video.mp4" type="video/mp4">
+    </video>
+    <main class="container">
+        <div
+            class="form-container w-full sm:w-[500px] h-auto sm:h-[600px] flex flex-col items-center justify-center">
+            <img alt="logo-shalom" src="./imgs/main-logo.png" class="w-[90%] sm:w-[500px] mb-[20px]" />
+
+            <h2 class="form-title font-bold w-[90%] sm:w-full">Preencha para darmos continuidade ao jogo!</h2>
+
+            <form class="form sm:w-[400px] w-full sm:h-[300px] flex flex-col items-center justify-center"
+                onsubmit="return validateForm(event)">
+                <div class="relative z-0 w-full mb-5 group h-[50px] px-5">
+                    <input type="text" id="username-success"
+                        class="h-[40px] bg-[rgb(7,140,224)] border-white text-white placeholder-white text-sm rounded-lg focus:ring-white focus:border-white block w-full p-2.5"
+                        placeholder="Nome completo" required>
+                </div>
+                <div class="relative z-0 w-full mb-5 group h-[50px] px-5">
+                    <input type="email" id="email"
+                        class="h-[40px] bg-[rgb(7,140,224)] border-white text-white placeholder-white text-sm rounded-lg focus:ring-white focus:border-white block w-full p-2.5"
+                        placeholder="Email" required>
+                </div>
+                <div class="relative z-0 w-full mb-5 group h-[50px] px-5">
+                    <input type="text" id="phone"
+                        class="h-[40px] bg-[rgb(7,140,224)] border-white text-white placeholder-white text-sm rounded-lg focus:ring-white focus:border-white block w-full p-2.5"
+                        placeholder="Telefone" required>
+                </div>
+
+                <button type="submit"
+                    class="button-duration animate__shakeX h-[40px] text-white w-[80%] bg-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-800">START</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>

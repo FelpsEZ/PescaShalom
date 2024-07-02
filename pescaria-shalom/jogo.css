@@ -1,0 +1,42 @@
+body {
+    background-color: #87CEEB; /* cor de fundo parecida com o mar */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    background-color: #F0F8FF; /* cor de fundo da área do jogo */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.pond {
+    width: 600px;
+    height: 300px;
+    background-color: #add8e6; /* cor de fundo do lago */
+    border: 2px solid #4682B4; /* cor da borda do lago */
+    border-radius: 10px;
+    margin: 20px auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.fish {
+    width: 50px;
+    height: 30px;
+    position: absolute;
+    bottom: 0;
+    animation: swim 2s linear infinite;
+}
+
+@keyframes swim {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(500px); }
+    100% { transform: translateX(0); }
+}

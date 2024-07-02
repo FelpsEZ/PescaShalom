@@ -1,0 +1,80 @@
+:root {
+    --primary-color: rgb(7,140,224);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 300;
+}
+
+.font-thin {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 100;
+}
+
+.font-bold {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
+#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+ }
+
+ .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+ }
+
+ .form-container {
+
+ }
+
+ .form-container h2.form-title {
+    height: auto;
+    text-align: center;
+    background-color: white;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    padding: 0 5px;
+ }
+
+ .form-bg {
+    background: rgb(146,179,211);
+background: linear-gradient(65deg, rgba(146,179,211,1) 0%, rgba(7,140,224,0.4430147058823529) 49%);
+    border-radius: 15px;
+    margin-top: 20px;
+ }
+
+ .button-duration {
+    display: inline-block;
+    margin: 0 0.5rem;
+  
+    animation-duration: 2s; /* don't forget to set a duration! */
+  }
